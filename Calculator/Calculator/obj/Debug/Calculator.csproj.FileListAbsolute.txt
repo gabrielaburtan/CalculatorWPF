@@ -14,3 +14,19 @@ D:\Facultate\Anul II\Semestrul II\Medii Vizuale de Programare - C#\Calculator\Ca
 D:\Facultate\Anul II\Semestrul II\Medii Vizuale de Programare - C#\Calculator\Calculator\obj\Debug\Calculator.pdb
 D:\Facultate\Anul II\Semestrul II\Medii Vizuale de Programare - C#\Calculator\Calculator\obj\Debug\AboutWindow.g.cs
 D:\Facultate\Anul II\Semestrul II\Medii Vizuale de Programare - C#\Calculator\Calculator\obj\Debug\AboutWindow.baml
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\bin\Debug\Calculator.exe.config
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\bin\Debug\Calculator.exe
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\bin\Debug\Calculator.pdb
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\Calculator.csprojAssemblyReference.cache
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\AboutWindow.g.cs
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\MainWindow.g.cs
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\App.g.cs
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\Calculator_MarkupCompile.cache
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\Calculator_MarkupCompile.lref
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\AboutWindow.baml
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\MainWindow.baml
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\Calculator.g.resources
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\Calculator.Properties.Resources.resources
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\Calculator.csproj.GenerateResource.cache
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\Calculator.exe
+D:\Facultate\Personal\CalculatorWPF\Calculator\Calculator\obj\Debug\Calculator.pdb

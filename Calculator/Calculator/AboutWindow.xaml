@@ -15,10 +15,9 @@
 
         <StackPanel x:Name="stackPanel">
             <TextBlock x:Name="programmersName" FontSize="30" Foreground="#FFFF5D00" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-            <TextBlock x:Name="numberOfProcessors" FontSize="15" Foreground="#FFFFAE00" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-            <TextBlock x:Name="osVersion" FontSize="15" Foreground="#FFFFAE00" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
-            <TextBlock FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Hyperlink RequestNavigate="LinkRequestNavigate"  NavigateUri="https://intranet.unitbv.ro/BurtanGabriela" Cursor="Hand">https://intranet.unitbv.ro/BurtanGabriela</Hyperlink>
+            
+            <TextBlock FontSize="15" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="20">
+            <Hyperlink RequestNavigate="LinkRequestNavigate"  NavigateUri="https://github.com/gabrielaburtan?tab=repositories" Cursor="Hand">https://github.com/gabrielaburtan?tab=repositories</Hyperlink>
             </TextBlock>
         </StackPanel>
         <Button Grid.Row="1" Content="Cancel" FontSize="15" Click="CancelButtonClick" Cursor="Hand" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="10" Height="30" Width="100" Background="#FFFFAE00" FontWeight="Bold"></Button>

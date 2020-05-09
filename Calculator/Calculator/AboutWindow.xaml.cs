@@ -25,8 +25,6 @@ namespace Calculator
         {
             InitializeComponent();
             programmersName.Text += " © Burtan Gabriela";
-            numberOfProcessors.Text += "Number of processors: " + Environment.ProcessorCount.ToString();
-            osVersion.Text += "OS version: " + Environment.OSVersion.ToString();
         }
         private void LinkRequestNavigate(object sender, System.Windows.Navigation.RequestNavigateEventArgs e)
         {
