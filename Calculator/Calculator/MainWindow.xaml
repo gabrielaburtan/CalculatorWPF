@@ -1,0 +1,105 @@
+﻿<Window x:Class="Calculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculator"
+        mc:Ignorable="d"
+        Title="Calculator" 
+        WindowStartupLocation="CenterScreen" Icon="Resources/Calculator.ico"
+        FontFamily="Bookman Old Style" FontSize="10" 
+        Background="Black" BorderBrush="Black" Foreground="Black" 
+        OpacityMask="{DynamicResource {x:Static SystemColors.ActiveCaptionTextBrushKey}}"
+        MinHeight="540" MinWidth="380" Width="400" Height="604" Visibility="Visible" WindowStyle="None" ResizeMode="CanMinimize"
+        Keyboard.KeyDown="KeyboardKeyDown">
+
+    <!--Buttons-->
+    <Grid>
+        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Height ="30" Grid.Row="0" Background="#2F3640" MouseDown="WindowMouseDown">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center">
+                <Image Source="Resources/calculator.ico" Width="18" HorizontalAlignment="Left" VerticalAlignment="Center" Visibility="Visible" Margin="5,0,0,0" />
+                <TextBlock Text="Calculator" VerticalAlignment="Center" FontSize="13" FontFamily="Lato" Foreground="White" Margin="8 3 0 0" />
+            </StackPanel>
+
+            <StackPanel x:Name="MainBorder" Orientation="Horizontal" HorizontalAlignment="Right" Width="150">
+                <Button x:Name="MinimizeButton" Content = "—" VerticalContentAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Minimize" Click="MinimizeButtonClick" Width="50"/>
+                <Button x:Name="MaximizeButton" Content="🗖" Visibility="Visible" VerticalContentAlignment="Center"
+                         WindowChrome.IsHitTestVisibleInChrome="True" Width="50" IsEnabled="False"/>
+                <Button x:Name="ExitButton" Content="✖" VerticalContentAlignment="Center" WindowChrome.IsHitTestVisibleInChrome="True" ToolTip="Close"
+                         Click="ExitButtonClick" Width="50"/>
+            </StackPanel>
+        </Grid>
+
+        <Menu x:Name="Menu" Height="22" Grid.Row="1" Background="#FFFFD156">
+            <MenuItem Header="Edit" Icon="✎">
+                <MenuItem Header="Cut" Icon="✂️" Click="CutClick" Background="White"/>
+                <MenuItem Header="Copy" Icon="⎘"  Click="CopyClick" Background="White"/>
+                <MenuItem Header="Paste" Icon="📋" Click="PasteClick" Background="White"/>
+            </MenuItem>
+            <MenuItem Header="View" Icon="👁">
+                <CheckBox Name="CheckBox" Content="Digit Grouping" Click="DigitGroupingClick" BorderBrush="#FFFFAE00"></CheckBox>
+            </MenuItem>
+            <MenuItem Header="Help" Icon="❓">
+                <MenuItem Header="About" Icon="🛈" Click="AboutClick" Background="White"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <!--Text Box-->
+        <TextBox Name="TxtDisplay" KeyDown ="KeyboardKeyDown" TextAlignment="Right" FontSize="35" IsReadOnly="True" BorderThickness="0" Background="#FF24292C" Foreground="White" Height="70" VerticalAlignment="Top" Grid.Row="2" Text="0">
+        </TextBox>
+        <!--BUTTONS-->
+        <StackPanel Grid.Row="3">
+            <StackPanel Orientation="Horizontal" Height="70">
+                <Button Focusable="False" Name="BtnMemoryClear" Width ="80" FontSize="30" Click="BtnMemoryClearClick" Background="#FF24292C" Foreground="White" OpacityMask="Black">MC</Button>
+                <Button Focusable="False" Name="BtnMemoryRecall" Width ="80" FontSize="30" Click="BtnMemoryRecallClick" Background="#FF24292C" Foreground="White">MR</Button>
+                <Button Focusable="False" Name="BtnMemoryAdd" Width ="80" FontSize="30" Click="BtnMemoryAddClick" Background="#FF24292C" BorderBrush="#FF707070" Foreground="White">M+</Button>
+                <Button Focusable="False" Name="BtnMemorySubstract" Width ="80" FontSize="30" Click="BtnMemorySubstractClick" Background="#FF24292C" BorderBrush="#FF707070" Foreground="White">M-</Button>
+                <Button Focusable="False" Name="BtnMemoryStore" Width ="80" FontSize="30" Click="BtnMemoryStoreClick" Background="#FF24292C" Foreground="White">MS</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="70">
+                <Button Focusable="False" Name="BtnPercent" Width ="100" FontSize="30" Click="BtnPercentClick" Background="#FFFFAE00" Foreground="Black">%</Button>
+                <Button Focusable="False" Name="BtnCE" Width ="100" FontSize="30" Click="BtnCEClick" Background="#FFFFAE00" Foreground="Black">CE</Button>
+                <Button Focusable="False" Name="BtnC" Width ="100" FontSize="30" Click="BtnCClick" Background="#FFFFAE00" Foreground="Black">C</Button>
+                <Button Focusable="False" Name="BtnBackspace" Width ="100" FontSize="30" Click="BtnBackspaceClick" Background="#FFFF5D00" Foreground="Black">Clr</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="70">
+                <Button Focusable="False" Name="InversionBtn"  Width ="100" FontSize="30" Click="InversionBtnClick" Background="#FFFFAE00" Foreground="Black">1/x</Button>
+                <Button Focusable="False" Name="SquareBtn"  Width ="100" FontSize="30" Click="SquareBtnClick" Background="#FFFFAE00" Cursor="Arrow" Foreground="Black">x^2</Button>
+                <Button Focusable="False" Name="SqrtBtn"  Width ="100" FontSize="30" Click="SqrtBtnClick" Background="#FFFFAE00" Foreground="Black">sqrt</Button>
+                <Button Focusable="False" Name="DivisionBtn"  Width ="100" FontSize="30" Click="OperationClick" Background="#FFFFAE00" Foreground="Black">/</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="70">
+                <Button Focusable="False" Name="Btn7"  Width ="100" FontSize="30" Click="ButtonClick" Background="#FF24292C" Foreground="White">7</Button>
+                <Button Focusable="False" Name="Btn8"  Width ="100" FontSize="30" Click="ButtonClick" Background="#FF24292C" Foreground="White">8</Button>
+                <Button Focusable="False" Name="Btn9"  Width ="100" FontSize="30" Click="ButtonClick" Background="#FF24292C" Foreground="White">9</Button>
+                <Button Focusable="False" x:Name="BtnMultiply"  Width ="100" FontSize="30" Click="OperationClick" Content="*" Background="#FFFFAE00" Foreground="Black"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="70">
+                <Button Focusable="False" Name="Btn4"  Width ="100" FontSize="30" Click="ButtonClick" Background="#FF24292C" Foreground="White">4</Button>
+                <Button Focusable="False" Name="Btn5"  Width ="100" FontSize="30" Click="ButtonClick" Background="#FF24292C" Foreground="White">5</Button>
+                <Button Focusable="False" Name="Btn6"  Width ="100" FontSize="30" Click="ButtonClick" Background="#FF24292C" Foreground="White">6</Button>
+                <Button Focusable="False" Name="BtnMinus"  Width ="100" FontSize="30" Click="OperationClick" Background="#FFFFAE00" Foreground="Black">-</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="70">
+                <Button Focusable="False" Name="Btn1"  Width ="100" FontSize="30" Click="ButtonClick" Background="#FF24292C" Foreground="White">1</Button>
+                <Button Focusable="False" Name="Btn2"  Width ="100" FontSize="30" Click="ButtonClick" Background="#FF24292C" Foreground="White">2</Button>
+                <Button Focusable="False" Name="Btn3"  Width ="100" FontSize="30" Click="ButtonClick" Background="#FF24292C" Foreground="White">3</Button>
+                <Button Focusable="False" Name="BtnPlus" Width ="100" FontSize="30" Click="OperationClick" Background="#FFFFAE00" Foreground="Black">+</Button>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Height="70">
+                <Button Focusable="False" Name="BtnPlusMinus" Width ="100" FontSize="30" Click="BtnOpositeClick" Background="#FFFFAE00" Foreground="Black">+/-</Button>
+                <Button Focusable="False" Name="Btn0" Width ="100" FontSize="30" Click="ButtonClick" Foreground="White" Background="#FF24292C">0</Button>
+                <Button Focusable="False" Name="BtnPoint" Width ="100" FontSize="30" Click="BtnPointClick" Background="#FF24292C" Foreground="#FF818181">.</Button>
+                <Button Focusable="False" Name="BtnEqual" Width ="100" FontSize="30" Click="EqualClick" Background="#FFFF5D00" Foreground="Black">=</Button>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
+</Window>
